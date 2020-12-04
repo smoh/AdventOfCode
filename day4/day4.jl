@@ -18,7 +18,7 @@ function solvepart1()
             end
         end
         println("$(npassport) nvalid: $(nvalid)")
-    # the last empty line is not read; manually check last passport
+    # there is no newline following the last item; manually check last passport
     npassport += 1
     if issubset(Set(["byr","iyr","eyr","hgt","hcl", "ecl","pid"]), fields)
         nvalid += 1
