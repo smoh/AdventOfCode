@@ -6,6 +6,6 @@ open("input.txt") do f
     count = map(g -> length(Set(collect(join(g)))), groups)
     println(sum(count))    # 6351
 
-    count2 = map(g -> length( reduce(intersect, collect.(g)) ), groups)
+    count2 = map(g -> length(reduce(intersect, collect.(g))), groups)
     println(sum(count2)) # 3143
 end
