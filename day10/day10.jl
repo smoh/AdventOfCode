@@ -21,7 +21,7 @@ println(d[1:15])
 # Three 1's = 1 + 1 + 1 = 2 + 1 = 1 + 2 = 3 (four ways)
 # similarly four 1's have 7 ways
 # 
-# This puzzle contains at most consecutive 4 ones.
+# This puzzle contains at most 4 consecutive ones.
 
 
 # crappy way of counting consecutive 1's between 3's
