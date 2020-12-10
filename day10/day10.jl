@@ -61,5 +61,19 @@ end
 println(prod(y))
 
 
+# part 2 different solution recursively add ways to get to every node
+#
+# there are `value` ways to get to `key`
+sol = Dict(0 => 1)
+for nn in n[2:end]
+  # you could have come from 1,2,3 steps before
+  global sol[nn] = 0
+  for diff in 1:3
+    if nn - diff in keys(sol)
+      global sol[nn] += sol[nn - diff]
+    end
+  end
+end
+println(sol[n[end]])
 
 
