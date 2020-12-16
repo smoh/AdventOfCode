@@ -62,14 +62,11 @@ let c = [], invalid = []
         push!(poss, (i, reduce(intersect, a)))
     end
 
-    # starting from the largest set, remove things in other sets
+    # starting from the largest set, remove things in the smaller sets
     sort!(poss, by=x -> length(x[2]), rev=true)
     positions = []
-    for (pos, keyset) in poss
-        for (pos2, keyset2) in poss
-            if pos == pos2
-                continue
-            end
+    for (i, (pos, keyset)) in enumerate(poss)
+        for (pos2, keyset2) in poss[i+1:end]
             setdiff!(keyset, keyset2)
         end
         push!(positions, (pos, pop!(keyset)))
